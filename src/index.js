@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+//import MessageStore from './MessageStore';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+      {/*<MessageStore>*/}
     <App />
-  </React.StrictMode>,
+      {/*</MessageStore>*/}
+</React.StrictMode>,
   document.getElementById('root')
 );
 

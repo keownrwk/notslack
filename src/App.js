@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Board from './Board';
+import Channels from './Channels'
+import {messages} from "./testMessages";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = ({}) => {
+
+    function groupBy(key) {
+        return function group(array) {
+            return array.reduce((acc, obj) => {
+                const property = obj[key];
+                acc[property] = acc[property] || [];
+                acc[property].push(obj);
+                return acc;
+            }, {});
+        };
+    }
+
+    const groupByChannel = groupBy('channel');
+    const groupByUser = groupBy('user');
+
+    const channels = groupByChannel(messages);
+    const users = groupByUser(messages);
+console.log('Msgs: ', messages)
+    return (
+        <div className="Board-page">
+            <Channels channels={channels}/>
+            <Board listing={channels}/>
+        </div>
+    )
 }
-
 export default App;
