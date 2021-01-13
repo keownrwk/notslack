@@ -1,0 +1,35 @@
+.Channels-sec {
+    background: darkblue;
+    color: antiquewhite;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    width: 400px;
+    display: block;
+}
+
+.Channels-sec.selected {
+    background: darkorange;
+    color: darkblue;
+}
+
+.Channels-list {
+    margin: 5px;
+}
+
+.Channels-list-el {
+    display: block;
+    width: 300px;
+    list-style-type: none;
+    padding: 2px;
+}
+
+.Channels-sec h3 {
+    font-size: 17px;
+    color: yellow;
+    font-weight: bold;
+    padding-bottom: 2px;
+    margin: 0;
+    padding-top: 5px;
+    text-transform: uppercase;
+}
