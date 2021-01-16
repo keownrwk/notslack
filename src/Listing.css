@@ -1,0 +1,18 @@
+.Listing-page {
+    overflow: scroll;
+    font-family: Helvetica, sans-serif;
+    height: 100vh;
+}
+.Listing-header {
+    font-size:13px;
+}
+.Listing-header .bold {
+    font-weight:bold;
+}
+.Listing-date {
+    color: gray;
+}
+.Listing-message {
+    font-size:14px;
+    margin-bottom: 8px;
+}

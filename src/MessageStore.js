@@ -1,16 +1,20 @@
-import {useEffect, useState, createContext} from 'react';
-import {messages} from './testMessages';
+import {useState, createContext} from 'react';
+import {newMessages} from './testMessages';
 
-const MessagesContext = createContext(null);
+const MessagesContext = createContext();
+
+
 const MessageStore = ({children}) => {
 
+    const rawAppState = {messages: newMessages, channelsTab: 'General', usersTab: '', sortField: 'General', sortSource: 'channel'};
 
+    const [appState, setAppState] = useState(rawAppState);
 
     return (
         <MessagesContext.Provider
             value={{
-               messages,
-               setMessages
+                appState,
+                setAppState
             }}
         >
             {children}
@@ -19,4 +23,4 @@ const MessageStore = ({children}) => {
     );
 }
 
-export { MessageStore as default, MessagesContext};
+export {MessageStore as default, MessagesContext};

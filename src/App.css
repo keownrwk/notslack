@@ -1,0 +1,36 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    flex-basis: 30%;
+    background: darkblue;
+}
+
+
+.column2 {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    width: 500px;
+    flex-basis: 45%;
+    margin-left: 10px;
+}
+.App-left {
+    display: flex;
+    flex-direction: row;
+    width: 35%;
+}
+.App-right {
+    display: flex;
+    margin-left: 20 px;
+    width: 65%;
+    vertical-align: top;
+}
+

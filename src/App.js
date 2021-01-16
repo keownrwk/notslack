@@ -1,9 +1,13 @@
+import {useContext} from 'react';
 import './App.css';
-import Board from './Board';
-import Channels from './Channels'
-import {messages} from "./testMessages";
+import Listing from './Listing';
+import Channels from './Channels';
+import Users from './Users';
+import {MessagesContext} from './MessageStore';
 
-const App = ({}) => {
+
+const App = () => {
+    const {appState, setAppState} = useContext(MessagesContext);
 
     function groupBy(key) {
         return function group(array) {
@@ -17,15 +21,23 @@ const App = ({}) => {
     }
 
     const groupByChannel = groupBy('channel');
-    const groupByUser = groupBy('user');
+    const groupByUser = groupBy('from');
 
-    const channels = groupByChannel(messages);
-    const users = groupByUser(messages);
-console.log('Msgs: ', messages)
+    const channels = groupByChannel(appState.messages);
+    const users = groupByUser(appState.messages);
+
+
     return (
         <div className="Board-page">
-            <Channels channels={channels}/>
-            <Board listing={channels}/>
+            <div className="row">
+            <div className='column1'>
+                <Channels channels={channels}/>
+                <Users users={users}/>
+            </div>
+            <div className="column2">
+                <Listing listing={channels}/>
+            </div>
+            </div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-let messages = [
+let newMessages = [
     {
         id: 1,
         from: 'Rob',
@@ -37,4 +37,4 @@ let messages = [
 ];
 
 
-export {messages};
+export {newMessages};
