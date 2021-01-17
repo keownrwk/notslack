@@ -11,6 +11,7 @@ const Listing = ({listing}) => {
         const sortSource = appState.sortSource;
         const sortField = appState.sortField;
         const sortFunc = (a,b) => {
+            //example of sorting on a user or channel is alphabetic order (not used so commented out)
             /*if(a[sortSource] >b[sortSource]) {return 1} else
                 if (a[sortSource] <b[sortSource]) {return -1}
         }*/
@@ -25,7 +26,9 @@ const Listing = ({listing}) => {
 
     return (
         <div className='Listing-page'>
-
+{/*//sortSource contains field name (channel or user) selected in Tabs
+//sortField contains value of Tab (e.g. "General" or "Rob"
+//Listing sortation is set for dateTime*/}
 
             {items.filter(item => item[sortSource] === sortField).sort(sortFunc).map((item) => {
                 return (

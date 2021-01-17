@@ -3,6 +3,7 @@ import './App.css';
 import Listing from './Listing';
 import Channels from './Channels';
 import Users from './Users';
+import Message from './Message';
 import {MessagesContext} from './MessageStore';
 
 
@@ -33,9 +34,11 @@ const App = () => {
             <div className='column1'>
                 <Channels channels={channels}/>
                 <Users users={users}/>
+
             </div>
             <div className="column2">
                 <Listing listing={channels}/>
+                <Message user={'Rob'} />
             </div>
             </div>
         </div>

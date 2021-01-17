@@ -1,7 +1,8 @@
 .Listing-page {
     overflow: scroll;
     font-family: Helvetica, sans-serif;
-    height: 100vh;
+    height: 90vh;
+    scroll-behavior: auto;
 }
 .Listing-header {
     font-size:13px;
@@ -14,5 +15,5 @@
 }
 .Listing-message {
     font-size:14px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
